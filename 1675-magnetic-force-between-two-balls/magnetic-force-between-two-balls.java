@@ -2,14 +2,17 @@ class Solution {
 
      static boolean isValid(int [] arr, int k, int mid){
             int marblecount = 1;
-            int lastpos = 0;
-            for(int i = 1; i<arr.length ; i++){
+             int lastpos = 0;
+
+             for(int i = 1; i<arr.length ; i++){
                 if(arr[i] - arr[lastpos] >= mid){
                     marblecount++;
                     lastpos=i;
                 }
-                
-            }
+                if(marblecount == k){
+                    return true;
+                }
+             }
             return marblecount>=k;
         }
 
