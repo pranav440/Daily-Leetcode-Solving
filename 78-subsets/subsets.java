@@ -8,9 +8,14 @@ class Solution {
         output.add(currentvalue);
         solve(nums,ans,output,index+1);
         output.remove(output.size()-1);
+        while(index+1<nums.length && nums[index] == nums[index+1]){
+            index++;
+        }
+
         solve(nums,ans,output,index+1);
     }
     public List<List<Integer>> subsets(int[] nums) {
+        Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> output = new ArrayList<>();
         int index =0;
