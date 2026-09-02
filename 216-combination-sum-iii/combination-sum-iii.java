@@ -1,6 +1,6 @@
 class Solution {
     public List<List<Integer>> combinationSum3(int k, int n) {
-        int[] candidates = new int[10];
+        int[] candidates = new int[9];
         for(int i=0 ; i<9 ; i++){
             candidates[i] = i+1;
         }
